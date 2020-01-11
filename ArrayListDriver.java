@@ -1,8 +1,8 @@
 interface LinearList<T>
 {
-    public void add(T a);
+    public void add(Object a);
     public void delete(int i);
-    public void set(int f,T n);
+    public void set(int f,Object n);
     public void get(int l);
     public void traverse();
     public void size(); 
@@ -18,7 +18,7 @@ class ArrayList<T> implements LinearList<T>
         size=0;
         arr=new Object[buffer];
     }
-    public void set(int f,T n)
+    public void set(int f,Object n)
     {
         arr[f]=n;
     }
@@ -30,7 +30,7 @@ class ArrayList<T> implements LinearList<T>
         }
         size--;
     }
-    public void add(T a)
+    public void add(Object a)
     {
        if(size==buffer)
        {
