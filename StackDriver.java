@@ -1,25 +1,25 @@
 import java.util.*;
 interface A<T>
 {
-    public void push(int i);
+    public void push(Object i);
     public void pop();
-    public int peek();
+    public Object peek();
     public boolean isEmpty();
-    public int search(int f);
+    public int search(Object f);
 }
 
 class Stack<T> implements A<T>
 {
     Integer capacity;
-    Integer arr[];
+    Object arr[];
     Integer size;
     Stack(Integer cap)
     {
         capacity=cap;
-        arr=new Integer[cap];
+        arr=new Object[cap];
         size=-1;
     }
-    public void push(int i)
+    public void push(Object i)
     {
         try
         {
@@ -53,7 +53,7 @@ class Stack<T> implements A<T>
         size--;
         
     }
-    public int peek()
+    public Object peek()
     {
         return arr[size];
     }
@@ -67,7 +67,7 @@ class Stack<T> implements A<T>
             return false;
         }
     }
-    public int search(int f)
+    public int search(Object f)
     {
         int i;
         for(i=0;i<size;i++)
@@ -88,17 +88,17 @@ class StackDriver
         // Scanner sc=new Scanner(System.in);
         // System.out.println("Enter the capacity of stack");
         // int n=sc.nextInt();
-        Stack<Integer> s=new Stack<Integer>(5);
-        s.push(13);
-        s.push(134);
-        s.push(1);
-        s.push(103);
-        int p=s.peek();
+        Stack<Double> s=new Stack<Double>(5);
+        s.push(13.33);
+        s.push(134.98);
+        // s.push(1);
+        s.push(103.45);
+        Object p=s.peek();
         System.out.println("No.at te top "+p);
-        s.push(11);
-        int r=s.peek();
+        s.push(11.3);
+        Object r=s.peek();
         System.out.println("No.at te top "+r);
-        s.push(2);
+        s.push(2.00);
         // s.pop();
         
     }
