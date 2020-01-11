@@ -1,14 +1,14 @@
 interface A<T>
 {
-    public void enqueue(int i);
+    public void enqueue(Object i);
     public void dequeue();
-    public int Front();
-    public int Rear();
+    public Object Front();
+    public Object Rear();
     public int Size();
 }
 class Queue<T> implements A<T> 
 {
-    Integer arr[];
+    Object arr[];
     Integer buffer;
     Integer front;
     Integer rear;
@@ -16,12 +16,12 @@ class Queue<T> implements A<T>
     Queue(int cap)
     {
         buffer=cap;
-        arr=new Integer[buffer];
+        arr=new Object[buffer];
         front=0;
         rear=0;
         size=0;
     }
-    public void enqueue(int i)
+    public void enqueue(Object i)
     {
         try{
             if(rear==buffer)
@@ -52,11 +52,11 @@ class Queue<T> implements A<T>
         front++;
         size--;
     }
-    public int Front()
+    public Object Front()
     {
         return arr[front];
     }
-    public int Rear()
+    public Object Rear()
     {
         return arr[--rear];
     }
@@ -78,8 +78,8 @@ class QueueDriver
         q.enqueue(50);
         q.dequeue();
         int s=q.Size();
-        int r=q.Rear();
-        int f=q.Front();
+        Object r=q.Rear();
+        Object f=q.Front();
         System.out.println("front value = "+f+" Rear value = "+r);
         System.out.println("size = "+ s);
     }
